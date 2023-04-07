@@ -1,6 +1,28 @@
+import { Header } from './components/Header'
+import { Links } from './components/Links'
+import { Footer } from './components/Footer'
+
+import links from './data'
+
 function App() {
+
+  const linksItens = links.map(link => {
+    return <Links
+      key={link.id}
+      href={link.url}
+      title={link.title}
+    />
+  })
   return (
-    <h1 className="text-3xl font-bold text-center mt-10">Hello, world! 👋</h1>
+    <>
+      <Header />
+
+      <ul className='mb-10'>
+        {linksItens}
+      </ul>
+
+      <Footer />
+    </>
   )
 }
 
